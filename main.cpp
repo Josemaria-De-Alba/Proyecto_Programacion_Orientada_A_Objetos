@@ -9,31 +9,38 @@ A01706847
 #include <stdlib.h>
 
 #include "weapon.h"
+#include "loadout.h"
 
 using namespace std;
 
 int main() {
   //Todos estos son para probar que funcionen las funciones
-  Weapon gun{};
-  gun.print_stats();
+
+  
   
   Exotic quicksilver("Quicksilver", "Auto-Rifle", 50, true,"Rocket Tracers", "Nano-Entanglement");
-  quicksilver.print_stats();
+  quicksilver.characteristics();
 
   Legendary ikelos_sg("IKELOS_SG_v1.0.3", "Shotgun", 8, false, "Rasputins Arsenal", "Reload");
-  ikelos_sg.print_stats();
+  ikelos_sg.characteristics();
+  
   
   //Pruebas Polimorfismo
-  Weapon *poliweapon = new Weapon();
-  poliweapon->print_stats();
-  poliweapon->characteristics();
+  
   
   Weapon *navigator = new Exotic("Protective Weave","Not Found");
+  navigator->set_name("Navigator");
   navigator->print_stats();
-  navigator->setName("Navigator");
   navigator->characteristics();
 
   Weapon *indebted_kindness = new Legendary("Indebted Kindness", "Rocket-Assisted Frame", "Stability");
   indebted_kindness->print_stats();
   indebted_kindness->characteristics();
+  
+  
+  
+  Loadout loadout;
+  loadout.default_loadout();
+  loadout.print_loadout();
+  
 }
