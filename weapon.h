@@ -22,52 +22,52 @@ class Weapon{
     bool inf_ammo;
     string rarity;
   public:
-    Weapon(): name("Weapon"), type("Gun"), mag_size(20), inf_ammo(true), rarity("???"){};
+    Weapon(): name("Weapon"), type("Gun"), mag_size(20), inf_ammo(true), 
+rarity("???"){};
     Weapon(string na);
     Weapon(string na, string ty);
     Weapon(string na, string ty, int mag, bool inf);
     Weapon(string na, string ty, int mag, bool inf, string rare);
 
-    string getName()const{
+    string get_name(){
        return name;
      }
-    void setName(string na){
+    void set_name(string na){
       name=na;
     }
 
 
-    string getType()const{
+    string get_type(){
       return type;
     }
-    void setType(string ty){
+    void set_type(string ty){
       type=ty;
     }
 
 
-    int getMag_Size()const{
+    int get_mag_size(){
       return mag_size;
     }
-    void setMag_Size(int mag){
+    void set_mag_size(int mag){
       mag_size=mag;
     }
 
 
-    bool getInf_Ammo()const{
+    bool get_inf_ammo(){
       return inf_ammo;
     }
-    void setInf_Ammo(bool inf){
+    void set_inf_ammo(bool inf){
       inf_ammo=inf;
     }
 
-    string getRarity()const{
+    string get_rarity(){
       return rarity;
     }
-    void setRarity(string rare){
+    void set_rarity(string rare){
       rarity=rare;
     }
 
-    void print_stats();
-
+    virtual void print_stats()=0;
     virtual void characteristics();
 };
 
@@ -113,8 +113,10 @@ void Weapon::print_stats(){
 
 void Weapon::characteristics(){
   cout << "Name: " << name << endl;
-  cout << "Weapons are your main way of fighting against the forces that endanger humanity and its allies." << endl;
-  cout << "There are three main types of weapons: primary, special, and heavy. Be sure to pick your weapons wisley guardian." << endl << endl;
+  cout << "Weapons are your main way of fighting against the forces that ";
+  cout << "endanger humanity and its allies." << endl;
+  cout << "There are three main types of weapons: primary, special, and heavy. ";
+  cout << "Be sure to pick your weapons wisley guardian." << endl << endl;
 }
 
 //Classe Hijo: Exotic Weapon
@@ -124,7 +126,8 @@ class Exotic: public Weapon {
     string exotic_perk;
     string catalyst;
   public:
-    Exotic(): Weapon("Exotic_Weapon", "Gun", 20, true, "Exotic"),exotic_perk("Perk"),catalyst("Cat"){};
+    Exotic(): Weapon("Exotic_Weapon", "Gun", 20, true, "Exotic"),
+      exotic_perk("Perk"),catalyst("Cat"){};
 
     Exotic(string perk, string cat){
       rarity="Exotic";
@@ -137,25 +140,27 @@ class Exotic: public Weapon {
       exotic_perk=perk;
       catalyst=cat;
     };
-    Exotic(string na, string ty, int mag, bool inf, string perk):Weapon(na, ty, mag, inf){
+    Exotic(string na, string ty, int mag, bool inf, string perk):
+Weapon(na, ty, mag, inf){
       rarity = "Exotic";
       exotic_perk=perk;
       catalyst="Not Found/Not Available";
     };
 
-    Exotic(string na, string ty, int mag, bool inf, string perk, string cat):Weapon(na, ty, mag, inf){
+    Exotic(string na, string ty, int mag, bool inf, string perk, string cat):
+Weapon(na, ty, mag, inf){
       rarity = "Exotic";
       exotic_perk=perk;
       catalyst=cat;
     };
 
-  string get_Exotic_Perk()const;
-  void set_Exotic_Perk(string perk){
+  string get_exotic_perk();
+  void set_exotic_perk(string perk){
     exotic_perk=perk;
   }
 
-  string get_Catalyst()const;
-  void set_Catalyst(string cat){
+  string get_catalyst();
+  void set_catalyst(string cat){
     catalyst=cat;
   }
   void print_stats();
@@ -163,11 +168,11 @@ class Exotic: public Weapon {
 
 };
 
-string Exotic::get_Exotic_Perk()const{
+string Exotic::get_exotic_perk(){
   return exotic_perk;
 }
 
-string Exotic::get_Catalyst()const{
+string Exotic::get_catalyst(){
   return catalyst;
 }
 
@@ -184,9 +189,20 @@ void Exotic::characteristics(){
   cout << "Name: " << name << endl;
   cout << "Exotic Perk: " << exotic_perk << endl;
   cout << "Catalyst: "<< catalyst << endl << endl;
-  cout << "Exotic weapons are some of the most powerfull weapons that a guardian can poses. They do increased damage to all oponents. They also poses two unique perks:" << endl;
-  cout << "-Exotic perks are the main thing that sets exotic weapons apart, they give weapons unique abilities such as making enemies explode when they die or giving you the ability to levitate when you shoot." << endl;
-  cout << "-Catalysts are an extra source of power that can make exotics even more efective. They can make a weak weapon extremely powerful. However they need to be earned. First you need to find them, then complete a certain objective in order to be able to use them. They take time, not all weapons have them, but its always beter to have them." << endl << endl;
+  cout << "Exotic weapons are some of the most powerfull weapons that a ";
+  cout << "guardian can poses. They do increased damage to all oponents.";
+  cout << "They also poses two unique perks:" << endl << endl;
+  cout << "-Exotic perks are the main thing that sets exotic weapons apart,";
+  cout << "they give weapons unique abilities such as making enemies explode";
+  cout << "when they die or giving you the ability to levitate when ";
+  cout << "you shoot." << endl << endl;
+  
+  cout << "-Catalysts are an extra source of power that can make exotics ";
+  cout << "even more efective. They can make a weak weapon extremely ";
+  cout << "powerful. However they need to be earned. First you need to find ";
+  cout << "them, then complete a certain objective in order to be able to ";
+  cout << "use them. They take time, not all weapons have them, ";
+  cout << "but its always beter to have them." << endl << endl;
 }
 
 //Clase Hijo: Legendary Weapon
@@ -218,12 +234,12 @@ class Legendary: public Weapon {
       masterwork=master;
     };
 
-  string get_Intrinsic_Trait()const;
-  void set_Intrinsic_Trait(string trait){
+  string get_intrinsic_trait();
+  void set_intrinsic_trait(string trait){
     intrinsic_trait=trait;
   }
-  string get_Masterwork()const;
-  void set_Masterwork(string master){
+  string get_masterwork();
+  void set_masterwork(string master){
     masterwork=master;
   }
 
@@ -231,11 +247,11 @@ class Legendary: public Weapon {
   void characteristics();
 };
 
-string Legendary::get_Intrinsic_Trait()const{
+string Legendary::get_intrinsic_trait(){
   return intrinsic_trait;
 }
 
-string Legendary::get_Masterwork()const{
+string Legendary::get_masterwork(){
   return masterwork;
 }
 
@@ -253,7 +269,19 @@ void Legendary::characteristics(){
   cout << "Name: " << name << endl;
   cout << "Intrinsic Trait: " << intrinsic_trait << endl;
   cout << "Masterwork: "<< masterwork << endl << endl;
-  cout << "Legendary weapons are what most guardians use, they are more standard weapons. They differ from exotic weapons since legendarys can have different perks each time you aquire them. They also have an intrinsic trait which they often share with other weapons of the same set." << endl;
-  cout << "They also have a masterwork which is a random stat increase for the weapon. It can boost handling, reaload, range, etc. Even if legendary weapons don´t have the same benefits as exoticts, they can still be powerful. However they are more random and it can take some time to get the perks and masterwork you want to get an exact roll." << endl << endl;
+  cout << "Legendary weapons are what most guardians use." << endl;
+  cout << "They are more standard weapons." << endl;
+  cout << "They differ from exotic weapons since legendaries can have ";
+  cout << "different perks each time you aquire them." << endl;
+  cout << "They also have an intrinsic trait which they often share ";
+  cout << "with other weapons of the same set." << endl << endl;
+  
+  cout << "They also have a masterwork which is a random stat increase ";
+  cout << "for the weapon. This is a masterwork." << endl;
+  cout << "It can boost handling, reaload, range, etc. Even if legendary ";
+  cout << "weapons don´t have the same benefits as exoticts, they can ";
+  cout << "still be powerful. However they are more random and it can take ";
+  cout << "some time to get the perks and masterwork you want to get an ";
+  cout << "exact roll."<< endl << endl;
 }
 #endif
