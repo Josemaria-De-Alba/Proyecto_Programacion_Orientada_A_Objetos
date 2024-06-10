@@ -71,6 +71,7 @@ rarity("???"){};
     virtual void characteristics();
 };
 
+//Constructores clase madre
 Weapon::Weapon(string na){
   name=na;
   type="Undefined";
@@ -102,7 +103,11 @@ Weapon::Weapon(string na, string ty, int mag, bool inf, string rare){
   inf_ammo=inf;
   rarity=rare;
 }
-
+/*
+Funcion para imprimir datos de una arma basica
+recibe: nada
+devuelve: nada
+*/
 void Weapon::print_stats(){
   cout << "Name: " << name << endl;
   cout << "Type: " << type << endl;
@@ -111,6 +116,11 @@ void Weapon::print_stats(){
   cout << "Rarity: " << rarity << endl << endl;
 }
 
+/*
+Funcion para explicar la imprortancia de escoger las armas correctas
+recibe: nada
+devuelve: nada
+*/
 void Weapon::characteristics(){
   cout << "Name: " << name << endl;
   cout << "Weapons are your main way of fighting against the forces that ";
@@ -176,6 +186,12 @@ string Exotic::get_catalyst(){
   return catalyst;
 }
 
+/*
+Funcion para imprimir datos de una arma exotic 
+Tiene dos variables unicas: exotic_perk y catalyst
+recibe: nada
+devuelve: nada
+*/
 void Exotic::print_stats(){
   cout << "Name: " << name << endl;
   cout << "Type: " << type << endl;
@@ -185,6 +201,13 @@ void Exotic::print_stats(){
   cout << "Exotic Perk: " << exotic_perk << endl;
   cout << "Catalyst: " << catalyst << endl << endl;
 } 
+
+/*
+Imprime las characteristicas principales de una arma exotic
+Explica que tiene de diferencia una arma exotic comparada con otras arms
+recibe: nada
+devuelve: nada
+*/
 void Exotic::characteristics(){
   cout << "Name: " << name << endl;
   cout << "Exotic Perk: " << exotic_perk << endl;
@@ -212,7 +235,6 @@ class Legendary: public Weapon {
   private:
     string intrinsic_trait;
     string masterwork;
-    //Agrega masterwork Level!!!
   public:
     Legendary(): Weapon("Legendary_Weapon", "Gun", 20, true, "Legendary"), intrinsic_trait("Intrinsic"), masterwork("Masterwork"){};
 
@@ -255,6 +277,12 @@ string Legendary::get_masterwork(){
   return masterwork;
 }
 
+/*
+Funcion para imprimir datos de una arma legendary
+Tiene dos variables unicas: intrinsic_trait y masterwork
+recibe: nada
+devuelve: nada
+*/
 void Legendary::print_stats(){
   cout << "Name: " << name << endl;
   cout << "Type: " << type << endl;
@@ -265,6 +293,12 @@ void Legendary::print_stats(){
   cout << "Masterwork: " << masterwork << endl << endl;
 } 
 
+/*
+Imprime las characteristicas principales de una arma legendary
+Explica que tiene de diferencia una arma legendary comparada con otras arms
+recibe: nada
+devuelve: nada
+*/
 void Legendary::characteristics(){
   cout << "Name: " << name << endl;
   cout << "Intrinsic Trait: " << intrinsic_trait << endl;
