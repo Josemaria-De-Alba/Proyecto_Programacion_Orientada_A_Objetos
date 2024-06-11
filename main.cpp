@@ -58,6 +58,9 @@ int main() {
       navigator->characteristics();
       indebted_kindness->characteristics();
     }
+    if (select<=0 or select>=5){
+      cout << "Incorrect input, please try again." << endl;
+    }
   }
   cout << "Thank you for using the Destiny Loadout Editor" << endl;
 }
