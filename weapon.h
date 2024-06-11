@@ -68,7 +68,7 @@ rarity("???"){};
     }
 
     virtual void print_stats()=0;
-    virtual void characteristics();
+    virtual void characteristics()=0;
 };
 
 //Constructores clase madre
@@ -102,31 +102,6 @@ Weapon::Weapon(string na, string ty, int mag, bool inf, string rare){
   mag_size=mag;
   inf_ammo=inf;
   rarity=rare;
-}
-/*
-Funcion para imprimir datos de una arma basica
-recibe: nada
-devuelve: nada
-*/
-void Weapon::print_stats(){
-  cout << "Name: " << name << endl;
-  cout << "Type: " << type << endl;
-  cout << "Ammo in Magazine: " << mag_size << endl;
-  cout << "Does it have infinte ammo:" << inf_ammo << endl;
-  cout << "Rarity: " << rarity << endl << endl;
-}
-
-/*
-Funcion para explicar la imprortancia de escoger las armas correctas
-recibe: nada
-devuelve: nada
-*/
-void Weapon::characteristics(){
-  cout << "Name: " << name << endl;
-  cout << "Weapons are your main way of fighting against the forces that ";
-  cout << "endanger humanity and its allies." << endl;
-  cout << "There are three main types of weapons: primary, special, and heavy. ";
-  cout << "Be sure to pick your weapons wisley guardian." << endl << endl;
 }
 
 //Classe Hijo: Exotic Weapon
