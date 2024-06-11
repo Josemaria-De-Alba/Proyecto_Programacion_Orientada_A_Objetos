@@ -13,32 +13,51 @@ A01706847
 
 using namespace std;
 
-int main() {
-  //Todos estos son para probar que funcionen las funciones
-  
-  Exotic quicksilver("Quicksilver", "Auto-Rifle", 50, true,"Rocket Tracers", "Nano-Entanglement");
-  quicksilver.characteristics();
-
-  Legendary ikelos_sg("IKELOS_SG_v1.0.3", "Shotgun", 8, false, "Rasputins Arsenal", "Reload");
-  ikelos_sg.characteristics();
-  
-  
-  //Pruebas Polimorfismo
-  
+int main() { 
+  //Pruebas Polimorfismo / Utilizados para demostracion  
   Weapon *navigator = new Exotic("Protective Weave","Not Found");
   navigator->set_name("Navigator");
-  navigator->print_stats();
-  navigator->characteristics();
 
   Weapon *indebted_kindness = new Legendary("Indebted Kindness", "Rocket-Assisted Frame", "Stability");
-  indebted_kindness->print_stats();
-  indebted_kindness->characteristics();
 
   //Demostracion de Loadout con default_loadout y change_loadout ya llenado
   Loadout loadout;
   loadout.default_loadout();
-  loadout.print_loadout();
-
-  loadout.change_loadout("Lament", "Sword", 1, false);
-  loadout.print_loadout();
+  
+  int select(0);
+  string name_m;
+  string type_m;
+  int mag_size_m;
+  bool inf_ammo_m;
+  cout << "Welcome to the Destiny Loadout Editor" << endl;
+  while (select!=4){
+    cout << "What would you like to do?" << endl;
+    cout << "Press 1 to edit loadout" << endl;
+    cout << "Press 2 to view loadout" << endl;
+    cout << "Press 3 to view general weapon characterisitcs" << endl;
+    cout << "Press 4 to close the program" << endl;
+    cin >> select;
+    if (select==1){
+      cout << "What is the weapon name?" << endl;
+      cin >> name_m;
+      cout << "What is the weapon type?" << endl;
+      cin >> type_m;
+      cout << "What is the magazine size?" << endl;
+      cin >> mag_size_m;
+      cout << "Does the weapon have infinite ammo?" << endl;
+      cout << "Type 0 for false" << endl << "Type 1 for True" << endl;
+      cin >> inf_ammo_m;
+      loadout.change_loadout(name_m, type_m, mag_size_m, inf_ammo_m);
+    }
+    if (select==2){
+      loadout.print_loadout();
+    }
+    if (select==3){
+      cout << "For simplicity we will use two pre-loaded weapons" << endl;
+      cout << "These weapons are The Navigator, and Indebted Kindness" << endl;
+      navigator->characteristics();
+      indebted_kindness->characteristics();
+    }
+  }
+  cout << "Thank you for using the Destiny Loadout Editor" << endl;
 }
