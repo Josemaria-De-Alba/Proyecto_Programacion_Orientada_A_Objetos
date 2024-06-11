@@ -25,3 +25,5 @@ Semana 3: Esta semana implemente una nueva funcion que utiliza polimorfismo paar
 Semana 4.1: Agrege una nueva clase donde se usan 3 de las clases hijas para crear un loadout. Tambien modifique la clase madre para que fuera abstracta. Estoy empezando a hacer cambios de sintaxis para que asegurar de que todo dentro del codigo este como deberia de ser y no haya errores ahi.
 
 Semana 4.2: Agregue una nueva funcion dentro de loadout que sirve para cambiar alguna de las armas dentro del loadout. Tambien incluí un uso de esta funcion dentro del main con los parametros que te pide ya llenados.
+
+Semana 5: Agrege un ciclo dentro del main para poder utilizar las funciones que quieras y que las puedas utilizar multiples veces.
