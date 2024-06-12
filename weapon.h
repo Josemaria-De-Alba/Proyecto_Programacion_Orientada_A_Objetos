@@ -29,40 +29,93 @@ rarity("???"){};
     Weapon(string na, string ty, int mag, bool inf);
     Weapon(string na, string ty, int mag, bool inf, string rare);
 
+
+ /*
+ Modificador de aceso get para nombre
+ recibe: nada
+ devuelve: string
+ */
     string get_name(){
        return name;
-     }
+    }
+/*
+Modificador de aceso set para nombre
+recibe: string
+devuelve: nada
+*/
     void set_name(string na){
       name=na;
     }
 
 
+/*
+Modificador de aceso get para tipo de arma
+recibe: nada
+devuelve: string
+*/
     string get_type(){
       return type;
     }
+      
+/*
+Modificador de aceso set para tipo de arma
+recibe: string
+devuelve: nada
+*/
     void set_type(string ty){
       type=ty;
     }
 
-
+/*
+Modificador de aceso get para mag_size
+recibe: nada
+devuelve: int
+*/
     int get_mag_size(){
       return mag_size;
     }
+
+/*
+Modificador de aceso set para mag_size
+recibe: int
+devuelve: nada
+*/
     void set_mag_size(int mag){
       mag_size=mag;
     }
 
-
+/*
+Modificador de aceso get para si el arma tiene municion infinita
+recibe: nada
+devuelve: bool
+*/
     bool get_inf_ammo(){
       return inf_ammo;
     }
+      
+/*
+Modificador de aceso set para si el arma tiene municion infinia
+recibe: bool
+devuelve: nada
+*/
     void set_inf_ammo(bool inf){
       inf_ammo=inf;
     }
 
+/*
+Modificador de aceso get para nivel de rareza
+recibe: nada
+devuelve: string
+*/
     string get_rarity(){
       return rarity;
     }
+
+/*
+Modificador de aceso set para tipo de arma
+recibe: string
+devuelve: nada
+*/
     void set_rarity(string rare){
       rarity=rare;
     }
@@ -138,13 +191,37 @@ Weapon(na, ty, mag, inf){
       exotic_perk=perk;
       catalyst=cat;
     };
+/*
+Modificador de aceso get para exotic_perk
+recibe: nada
+devuelve: string
+*/
+  string get_exotic_perk(){
+   return exotic_perk; 
+  }
 
-  string get_exotic_perk();
+/*
+Modificador de aceso set para exotic_perk
+recibe: string
+devuelve: nada
+*/
   void set_exotic_perk(string perk){
     exotic_perk=perk;
   }
+/*
+Modificador de aceso get para catalyst
+recibe: nada
+devuelve: string
+*/
+  string get_catalyst(){
+    return catalyst;
+  }
 
-  string get_catalyst();
+/*
+Modificador de aceso set para catalyst
+recibe: string
+devuelve: nada
+*/
   void set_catalyst(string cat){
     catalyst=cat;
   }
@@ -152,14 +229,6 @@ Weapon(na, ty, mag, inf){
   void characteristics();
 
 };
-
-string Exotic::get_exotic_perk(){
-  return exotic_perk;
-}
-
-string Exotic::get_catalyst(){
-  return catalyst;
-}
 
 /*
 Funcion para imprimir datos de una arma exotic 
@@ -231,11 +300,38 @@ class Legendary: public Weapon {
       masterwork=master;
     };
 
-  string get_intrinsic_trait();
+/*
+Modificador de aceso get para intrinsic_trait
+recibe: nada
+devuelve: string
+*/
+  string get_intrinsic_trait(){
+    return intrinsic_trait;
+  }
+
+/*
+Modificador de aceso set para intrinsic_trait
+recibe: string
+devuelve: nada
+*/
   void set_intrinsic_trait(string trait){
     intrinsic_trait=trait;
   }
-  string get_masterwork();
+
+/*
+Modificador de aceso get para masterwork
+recibe: nada
+devuelve: string
+*/
+  string get_masterwork(){
+    return masterwork;
+  }
+
+/*
+Modificador de aceso set para masterwork
+recibe: string
+devuelve: nada
+*/
   void set_masterwork(string master){
     masterwork=master;
   }
@@ -244,13 +340,6 @@ class Legendary: public Weapon {
   void characteristics();
 };
 
-string Legendary::get_intrinsic_trait(){
-  return intrinsic_trait;
-}
-
-string Legendary::get_masterwork(){
-  return masterwork;
-}
 
 /*
 Funcion para imprimir datos de una arma legendary
