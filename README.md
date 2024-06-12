@@ -26,4 +26,4 @@ Semana 4.1: Agrege una nueva clase donde se usan 3 de las clases hijas para crea
 
 Semana 4.2: Agregue una nueva funcion dentro de loadout que sirve para cambiar alguna de las armas dentro del loadout. Tambien incluí un uso de esta funcion dentro del main con los parametros que te pide ya llenados.
 
-Semana 5: Agrege un ciclo dentro del main para poder utilizar las funciones que quieras y que las puedas utilizar multiples veces.
+Semana 5: Agrege un ciclo dentro del main para poder utilizar las funciones que quieras y que las puedas utilizar multiples veces. Tambien agregue una nueva funcion llamada all_characteristics, que es similar a print_loadout pero imprime las characteristicas principales y la descripcion general de las armas en vez.
