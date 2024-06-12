@@ -14,12 +14,6 @@ A01706847
 using namespace std;
 
 int main() { 
-  //Pruebas Polimorfismo / Utilizados para demostracion  
-  Weapon *navigator = new Exotic("Protective Weave","Not Found");
-  navigator->set_name("Navigator");
-
-  Weapon *indebted_kindness = new Legendary("Indebted Kindness", "Rocket-Assisted Frame", "Stability");
-
   //Demostracion de Loadout con default_loadout y change_loadout ya llenado
   Loadout loadout;
   loadout.default_loadout();
@@ -53,10 +47,8 @@ int main() {
       loadout.print_loadout();
     }
     if (select==3){
-      cout << "For simplicity we will use two pre-loaded weapons" << endl;
-      cout << "These weapons are The Navigator, and Indebted Kindness" << endl;
-      navigator->characteristics();
-      indebted_kindness->characteristics();
+      cout << "*Recomend having at least one exotic and legendary " << endl;
+      loadout.all_characteristics();
     }
     if (select<=0 or select>=5){
       cout << "Incorrect input, please try again." << endl;
