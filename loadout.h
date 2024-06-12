@@ -21,6 +21,7 @@ class Loadout{
     void default_loadout();
     void print_loadout();
     void change_loadout(string na, string ty, int mag, bool inf);
+    void all_characteristics();
 };
 
 
@@ -102,6 +103,18 @@ void Loadout::change_loadout(string na, string ty, int mag, bool inf){
     cout << "What is the Masterwork? Write as 1 word" << endl;
     cin >> master;
     loadout[i] = new Legendary(na, ty, mag, inf, trait, master);
+  }
+}
+/*
+Imprime las charactereisticas principales para todas las armas dentro 
+de loadout. Hay un comentario en el main que recomienda que haya 
+una arma exotic y una arma legendary para que funcione mejor.
+recibe: nada
+devuelve: nada
+*/
+void Loadout::all_characteristics(){
+  for (int i = 0; i < num_of_weapons; i++){
+      loadout[i] -> characteristics();
   }
 }
 
