@@ -27,8 +27,8 @@ class Loadout{
 
 /*
 Crea un loadout default para hacer más facil el uso de la funcion
-recibe: nada
-devuelve: nada
+@param
+@return
 */
 void Loadout::default_loadout(){
   loadout[0] = new Exotic("Ace of Spades", "Handcannon", 13, true, 
@@ -42,8 +42,8 @@ void Loadout::default_loadout(){
 /*
 Imprime todas las stats para todas las armas en loadout sin importar que
 sea exotic o legendary.
-recibe: nada
-devuelve: nada
+@param
+@return
 */
 
 void Loadout::print_loadout(){
@@ -59,8 +59,9 @@ balas infinitas.
 Dentro del programa te pregunta si es legendaria o exotica y 
 te deja agregar escoger sus variables exclusivas y en que posicion del
 loadout va.
-recibe: string name, string type, int magazine_size, bool inf_ammo
-devuelve: nada
+@param string con el nombre del weapon, string con el type del weapon, 
+@param int con el mag size del weapon, bool si el arma tiene balas infinitas 
+@return
 */
 void Loadout::change_loadout(string na, string ty, int mag, bool inf){
   int i;
@@ -109,8 +110,8 @@ void Loadout::change_loadout(string na, string ty, int mag, bool inf){
 Imprime las charactereisticas principales para todas las armas dentro 
 de loadout. Hay un comentario en el main que recomienda que haya 
 una arma exotic y una arma legendary para que funcione mejor.
-recibe: nada
-devuelve: nada
+@param
+@return
 */
 void Loadout::all_characteristics(){
   for (int i = 0; i < num_of_weapons; i++){
