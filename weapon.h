@@ -30,18 +30,18 @@ rarity("???"){};
     Weapon(string na, string ty, int mag, bool inf, string rare);
 
 
- /*
- Modificador de aceso get para nombre
- recibe: nada
- devuelve: string
- */
+/*
+Modificador de aceso get para nombre
+@param
+@return string con el nombre de weapon
+*/
     string get_name(){
        return name;
     }
 /*
 Modificador de aceso set para nombre
-recibe: string
-devuelve: nada
+@param string para nombre de weapon
+@return
 */
     void set_name(string na){
       name=na;
@@ -50,8 +50,8 @@ devuelve: nada
 
 /*
 Modificador de aceso get para tipo de arma
-recibe: nada
-devuelve: string
+@param
+@return string con el type de weapon
 */
     string get_type(){
       return type;
@@ -59,8 +59,8 @@ devuelve: string
       
 /*
 Modificador de aceso set para tipo de arma
-recibe: string
-devuelve: nada
+@param string para type de weapon
+@return
 */
     void set_type(string ty){
       type=ty;
@@ -68,8 +68,8 @@ devuelve: nada
 
 /*
 Modificador de aceso get para mag_size
-recibe: nada
-devuelve: int
+@param
+@return int con el tamaño de mag
 */
     int get_mag_size(){
       return mag_size;
@@ -77,8 +77,8 @@ devuelve: int
 
 /*
 Modificador de aceso set para mag_size
-recibe: int
-devuelve: nada
+@param int con el tamaño de mag
+@return
 */
     void set_mag_size(int mag){
       mag_size=mag;
@@ -86,8 +86,8 @@ devuelve: nada
 
 /*
 Modificador de aceso get para si el arma tiene municion infinita
-recibe: nada
-devuelve: bool
+@param
+@return bool si el arma tiene balas infinitas o no
 */
     bool get_inf_ammo(){
       return inf_ammo;
@@ -95,8 +95,8 @@ devuelve: bool
       
 /*
 Modificador de aceso set para si el arma tiene municion infinia
-recibe: bool
-devuelve: nada
+@param bool si el arma tiene balas infinitas o no
+@return
 */
     void set_inf_ammo(bool inf){
       inf_ammo=inf;
@@ -104,8 +104,8 @@ devuelve: nada
 
 /*
 Modificador de aceso get para nivel de rareza
-recibe: nada
-devuelve: string
+@param
+@return string con el rarity del weapon
 */
     string get_rarity(){
       return rarity;
@@ -113,8 +113,8 @@ devuelve: string
 
 /*
 Modificador de aceso set para tipo de arma
-recibe: string
-devuelve: nada
+@param string con el rarit del weapon
+@return
 */
     void set_rarity(string rare){
       rarity=rare;
@@ -193,8 +193,8 @@ Weapon(na, ty, mag, inf){
     };
 /*
 Modificador de aceso get para exotic_perk
-recibe: nada
-devuelve: string
+@param
+@return string con el nombre del exotic_perk
 */
   string get_exotic_perk(){
    return exotic_perk; 
@@ -202,16 +202,16 @@ devuelve: string
 
 /*
 Modificador de aceso set para exotic_perk
-recibe: string
-devuelve: nada
+@param string con el nombre del exotic perk
+@return
 */
   void set_exotic_perk(string perk){
     exotic_perk=perk;
   }
 /*
 Modificador de aceso get para catalyst
-recibe: nada
-devuelve: string
+@param
+@return string con el nombre del catalyst
 */
   string get_catalyst(){
     return catalyst;
@@ -219,8 +219,8 @@ devuelve: string
 
 /*
 Modificador de aceso set para catalyst
-recibe: string
-devuelve: nada
+@param string con el nombre del catalyst
+@return
 */
   void set_catalyst(string cat){
     catalyst=cat;
@@ -233,8 +233,8 @@ devuelve: nada
 /*
 Funcion para imprimir datos de una arma exotic 
 Tiene dos variables unicas: exotic_perk y catalyst
-recibe: nada
-devuelve: nada
+@param
+@return
 */
 void Exotic::print_stats(){
   cout << "Name: " << name << endl;
@@ -249,8 +249,8 @@ void Exotic::print_stats(){
 /*
 Imprime las characteristicas principales de una arma exotic
 Explica que tiene de diferencia una arma exotic comparada con otras arms
-recibe: nada
-devuelve: nada
+@param
+@return
 */
 void Exotic::characteristics(){
   cout << "Name: " << name << endl;
@@ -302,8 +302,8 @@ class Legendary: public Weapon {
 
 /*
 Modificador de aceso get para intrinsic_trait
-recibe: nada
-devuelve: string
+@param
+@return string con el nombre del intrinsic_trait
 */
   string get_intrinsic_trait(){
     return intrinsic_trait;
@@ -311,8 +311,8 @@ devuelve: string
 
 /*
 Modificador de aceso set para intrinsic_trait
-recibe: string
-devuelve: nada
+@param string con el nombre del intrinsic_trait
+@return
 */
   void set_intrinsic_trait(string trait){
     intrinsic_trait=trait;
@@ -320,8 +320,8 @@ devuelve: nada
 
 /*
 Modificador de aceso get para masterwork
-recibe: nada
-devuelve: string
+@param
+@return string con el nombre del masterwork
 */
   string get_masterwork(){
     return masterwork;
@@ -329,8 +329,8 @@ devuelve: string
 
 /*
 Modificador de aceso set para masterwork
-recibe: string
-devuelve: nada
+@param string con el nombre del masterwork
+@return
 */
   void set_masterwork(string master){
     masterwork=master;
@@ -344,8 +344,8 @@ devuelve: nada
 /*
 Funcion para imprimir datos de una arma legendary
 Tiene dos variables unicas: intrinsic_trait y masterwork
-recibe: nada
-devuelve: nada
+@param
+@return
 */
 void Legendary::print_stats(){
   cout << "Name: " << name << endl;
@@ -360,8 +360,8 @@ void Legendary::print_stats(){
 /*
 Imprime las characteristicas principales de una arma legendary
 Explica que tiene de diferencia una arma legendary comparada con otras arms
-recibe: nada
-devuelve: nada
+@param
+@return
 */
 void Legendary::characteristics(){
   cout << "Name: " << name << endl;
