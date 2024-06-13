@@ -9,9 +9,13 @@ Enseña el uso de la clase loadout utilizando default_loadout y tiene escrito un
 
 # Casos De Fallo:
 -Se utilizan las variables incorrectas para un constructor
+
 -Constructor recibe número incorrecto de variables
+
 -Función recibe cantidad o tipo de parámetros incorrectos
+
 -Poner valores incorrectos cuando el código pide números específicos
+
 -Utiliza compilador para lenguaje que no sea c++
 
 
