@@ -18,7 +18,7 @@ Enseña el uso de la clase loadout utilizando default_loadout y tiene escrito un
 
 -Utiliza compilador para lenguaje que no sea c++
 
--Si se usan espacios cuando pones un nombre/string
+-Si se usan espacios cuando pones un nombre/string(los cin no aceptan los espacios)
 
 
 # Modificaciones Semanales
